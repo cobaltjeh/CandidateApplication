@@ -1,0 +1,23 @@
+#!/usr/bin/env php72
+<?php
+
+use Symfony\Bundle\FrameworkBundle\Console\Application;
+use Symfony\Component\Debug\Debug;
+use Symfony\Component\Console\Input\ArgvInput;
+
+set_time_limit(0);
+
+/**
+ * @var App\Kernel $kernel
+ */
+$kernel = require_once __DIR__ . '/bootstrap.php';
+
+$input = new ArgvInput();
+
+if ($kernel->isDebug() && class_exists(Debug::class)) {
+    //umask(0000);
+    Debug::enable();
+}
+
+$application = new Application($kernel);
+$application->run($input);

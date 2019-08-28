@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<container
+    xmlns="http://symfony.com/schema/dic/services"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:monolog="http://symfony.com/schema/dic/monolog"
+    xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd"
+>
+    <monolog:config>
+        <monolog:handler
+                name="file_log"
+                type="stream"
+                path="%kernel.logs_dir%/%kernel.environment%.log"
+                level="debug"
+                formatter="line_formatter"
+        />
+    </monolog:config>
+</container>

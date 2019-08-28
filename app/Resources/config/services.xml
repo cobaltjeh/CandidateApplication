@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<container xmlns="http://symfony.com/schema/dic/services"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <services>
+        <defaults autowire="true" autoconfigure="true" public="false" />
+
+        <prototype namespace="App\" resource="../../../src/App/*" />
+
+        <!-- Adding this service manually will cause symfony to lazy load the services -->
+        <service id="App\Command\SalesWages">
+            <tag name="console.command" command="app:saleswages" />
+        </service>
+
+        <service id="line_formatter" class="App\Logger\LineFormatter" />
+
+    </services>
+</container>

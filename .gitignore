@@ -1,0 +1,6 @@
+/cache/
+/logs/
+/vendor/
+.idea
+.composer
+/app/cache
