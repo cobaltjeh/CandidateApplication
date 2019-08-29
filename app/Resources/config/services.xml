@@ -15,5 +15,9 @@
 
         <service id="line_formatter" class="App\Logger\LineFormatter" />
 
+        <service id="App\Classes\PaymentDateCalculator">
+            <argument key="$defaultBonusDate">15</argument>
+        </service>
+
     </services>
 </container>
