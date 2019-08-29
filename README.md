@@ -23,7 +23,7 @@ cd CandidateApplication/
 composer install
 ```
 
-##Run the application:
+## Run the application:
 
 ### Simple script
 
